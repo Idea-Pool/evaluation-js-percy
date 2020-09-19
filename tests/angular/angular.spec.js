@@ -11,6 +11,10 @@ const $getStarted = element(by.css(LANDING_PAGE["Get Started Button"]));
 const $$docsCards = element.all(by.css(GET_STARTED_PAGE["Docs Cards"]));
 const $directive = element(by.cssContainingText(LANDING_PAGE["Search Result"], "Directive"));
 
+const percyIgnore = {
+    percyCSS: ".progress-bar-container { display: none; }",
+};
+
 describe("angular.io visual test", () => {
     beforeEach(async () => {
         // GIVEN the Landing page is loaded
@@ -20,7 +24,7 @@ describe("angular.io visual test", () => {
     describe("TC1 - Checking Landing page elements", () => {
 
         it("should load Landing page", async () => {
-            await percySnapshot("LANDING PAGE");
+            await percySnapshot("LANDING PAGE", percyIgnore);
 
             // WHEN the Get started button is clicked
             await $getStarted.click();
@@ -29,7 +33,7 @@ describe("angular.io visual test", () => {
             await waitForElement($$docsCards);
 
             //THEN the Get started page should be loaded
-            await percySnapshot("GET STARTED PAGE");
+            await percySnapshot("GET STARTED PAGE", percyIgnore);
         });
     });
 

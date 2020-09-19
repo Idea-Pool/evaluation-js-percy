@@ -16,14 +16,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install, build, and start webdriver
+      - name: npm install, test
         run: |
           npm install
-          npm run wd
-        env:
-          CI: true
-      - name: npm test
-        run: |
           npm test
         env:
           CI: true

@@ -4,13 +4,14 @@
   "description": "This is a repository to create test-ware for evaluating Percy (JS) test automation tools.",
   "main": "-",
   "scripts": {
+    "chromekill": "taskkill /F /IM chromedriver*",
     "wd-update": "webdriver-manager update",
     "wd-start": "webdriver-manager start",
     "wd-shutdown": "webdriver-manager shutdown",
     "wd": "npm-run-all wd-update wd-start",
     "percy": "percy exec -- protractor protractor.conf.js",
     "no-percy": "protractor protractor.conf.js",
-    "test": "npm run percy",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint tests --fix"
   },
   "repository": {
