@@ -1,0 +1,4 @@
+{
+  "Default CheckBox": "input[id=\"defaultCheck1\"]",
+  "Second Default Radio": "input[id=\"exampleRadios2\"]"
+}

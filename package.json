@@ -1,10 +1,13 @@
 {
-  "name": "evaluation-js-template",
+  "name": "evaluation-js-percy",
   "version": "0.0.1",
-  "description": "This is a template repository to create test-ware for evaluating certain (JS) test automation tools.",
+  "description": "This is a repository to create test-ware for evaluating Percy (JS) test automation tools.",
   "main": "-",
   "scripts": {
-    "test": "echo \"No tests defined\" && exit 1",
+    "webdriver-update": "webdriver-manager update --gecko false --standalone false",
+    "wd-init": "npm run webdriver-update || npm run webdriver-update",
+    "test": "percy exec -- protractor protractor.conf.js",
+    "test-no-percy": "protractor protractor.conf.js",
     "lint": "eslint tests --fix"
   },
   "repository": {
@@ -21,12 +24,14 @@
   "author": "Idea Pool <SpecialEPM-DEBIdeaPoolStaff@epam.com>",
   "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
-    "url": "https://github.com/idea-pool/evaluation-js-template/issues"
+    "url": "https://github.com/idea-pool/evaluation-js-percy/issues"
   },
-  "homepage": "https://github.com/idea-pool/evaluation-js-template#readme",
+  "homepage": "https://github.com/idea-pool/evaluation-js-percy#readme",
   "dependencies": {
+    "@percy/protractor": "^1.1.0",
     "eslint": "^7.0.0",
-    "husky": "^4.2.5"
+    "husky": "^4.2.5",
+    "protractor": "^7.0.0"
   },
   "husky": {
     "precommit": "npm run lint"

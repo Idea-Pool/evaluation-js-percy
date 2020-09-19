@@ -1,0 +1,5 @@
+{
+  "Get Started Button": "a.button.hero-cta",
+  "Search Input": "input[type=search]",
+  "Search Result": ".search-result-item span"
+}

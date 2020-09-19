@@ -1,0 +1,11 @@
+{
+  "Angular": {
+    "baseUrl": "https://angular.io/"
+  },
+  "Bootstrap": {
+    "forms": "https://getbootstrap.com/docs/4.4/components/forms/",
+    "checkbox": "https://getbootstrap.com/docs/4.4/components/forms/#checkboxes-and-radios",
+    "buttons": "https://getbootstrap.com/docs/4.4/components/buttons/#disabled-state",
+    "formControls": "https://getbootstrap.com/docs/4.4/components/forms/#form-controls"
+  }
+}
