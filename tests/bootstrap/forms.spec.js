@@ -2,7 +2,9 @@
 const { percySnapshot } = require("@percy/protractor");
 const { browser } = require("protractor");
 const urls = require("../../data/testUrls.json").Bootstrap;
-
+const percyIgnore = {
+    percyCSS: "#carbonads { display: none; }",
+};
 
 describe("getbootstrap.com visual test", () => {
     beforeAll(() => browser.waitForAngularEnabled(false));
@@ -10,14 +12,14 @@ describe("getbootstrap.com visual test", () => {
     describe("TC-3 Checking form elements", () => {
         it("should display form elements properly", async () => {
             await browser.get(urls.forms);
-            await percySnapshot("FORMS");
+            await percySnapshot("FORMS", percyIgnore);
         });
     });
 
     describe("TC-7 Checking select form elements", () => {
         it("should display select form elements properly", async () => {
             await browser.get(urls.formControls);
-            await percySnapshot("FORM CONTROL");
+            await percySnapshot("FORM CONTROL", percyIgnore);
         });
     });
 });

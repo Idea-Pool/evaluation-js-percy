@@ -6,7 +6,8 @@
   "scripts": {
     "webdriver-update": "webdriver-manager update --gecko false --standalone false",
     "wd-init": "npm run webdriver-update || npm run webdriver-update",
-    "test": "percy exec -- protractor protractor.conf.js",
+    "percy": "percy exec -- protractor protractor.conf.js",
+    "test": "npm run wd-init || npm run percy",
     "test-no-percy": "protractor protractor.conf.js",
     "lint": "eslint tests --fix"
   },
