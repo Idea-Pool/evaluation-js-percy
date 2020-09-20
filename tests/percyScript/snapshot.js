@@ -1,5 +1,5 @@
 const PercyScript = require("@percy/script");
-const TEST_URL = require("../../data/testUrls.json")
+const TEST_URL = require("../../data/testUrls.json");
 const LANDING_PAGE = require("../../ui/angular/landing.json");
 const GET_STARTED_PAGE = require("../../ui/angular/getStarted.json");
 
