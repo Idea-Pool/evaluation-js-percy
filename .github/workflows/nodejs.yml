@@ -16,12 +16,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install, test
+      - name: Install
         run: |
           npm install
-      - name: percy test
-        with:
-          command: "npm run test:percy-script"
+      - name: Percy Test
+        run: |
+          npm run test:percy-script
         env:
           CI: true
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
